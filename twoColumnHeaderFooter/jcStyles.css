@@ -1,0 +1,71 @@
+/* CSS styles for jcIndex.html */
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 40px;
+	font-family: 'Open Sans', 'sans-serif';
+	background-color: #fff;
+	color: #444;
+}
+
+h1, p {
+	margin: 0 0 1em 0;
+}
+
+/* note: no grid support? */
+.sidebar {
+	font-size: 1em;
+	float: left;
+	width: 19.1489%;
+	list-style-type: none;
+}
+
+.content {
+	float: right;
+	width: 79.7872%;	
+}
+
+/* make my grid */
+
+.wrapper > * {
+	background-color: #323a45;
+	color: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	font-size: 1em;
+	/* needed for the floated layout */
+	margin-bottom: 10px;
+}
+
+.header img{
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	width: auto;
+    float: left;	
+}
+
+.title {
+	font-size: 125%;
+	display: inline-block;
+	text-align: center;
+	
+}
+.header, .footer {
+	grid-column: 1 / -1;
+    font-size: 2em; 	
+	/* needed for the floated layout */
+	clear: both;
+}
+
+/* this sets the widths on the floated items bacl to auto,
+it also removes the bottom margin when there are grid gaps. */
+@supports (disoplay: grid) {
+	.wrapper > * {
+	  width: auto;
+	  margin: 0;
+	}
+}
